@@ -1,0 +1,19 @@
+import viajes.*
+import socios.*
+
+describe "test de excursion a ciudad y ciudad tropical"{
+	
+	test"excursion a ciudad donde se visitan 4 atracciones"{
+		const exc1 = new ExcursionACiudad(cantAtracciones = 4)
+		assert.equals(2, exc1.diasActividad())
+		assert.notThat(exc1.implicaEsfuerzo())
+		assert.notThat(exc1.sirveParaBroncear())
+	}
+	
+	test"excursion a ciudad tropical donde se visitan 4 atracciones"{
+		const exc1 = new ExcursionCiudadTropical(cantAtracciones = 4)
+		assert.equals(3, exc1.diasActividad())
+		assert.notThat(exc1.implicaEsfuerzo())
+		assert.that(exc1.sirveParaBroncear())
+	}
+}
